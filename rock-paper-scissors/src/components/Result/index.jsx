@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Result = () => {
-  const [myScore, setMyScore] = useState(0);
-  const [computerScore, setComputerScore] = useState(0);
+  const dispatch = useDispatch();
+  const { scorePlayer1, scorePlayer2 } = useSelector((state) => state.score);
 
   return (
     <>
-      <h3>My score : {myScore}</h3>
-      <h3>His score : {computerScore}</h3>
+      <h3>My score : {scorePlayer1}</h3>
+      <h3>His score : {scorePlayer2}</h3>
     </>
   );
 };
