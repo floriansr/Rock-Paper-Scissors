@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Display from 'components/Display';
+import Result from 'components/Result';
+
 const App = () => {
   return (
     <>
-      <h3>salut</h3>
+      <Display />
+      <Result />
     </>
   );
 };
