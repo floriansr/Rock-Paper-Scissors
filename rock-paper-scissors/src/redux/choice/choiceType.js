@@ -1,0 +1,3 @@
+export const SET_CHOICE = 'SET_CHOICE';
+export const SET_COMPUTER_CHOICE = 'SET_COMPUTER_CHOICE';
+export const REMOVE_CHOICE = 'REMOVE_CHOICE';
