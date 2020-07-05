@@ -1,4 +1,8 @@
-import { SCORE_PLAYERS, REMOVE_SCORE } from 'redux/score/scoreType';
+import {
+  SCORE_PLAYERS,
+  INCREMENT_PLAYER,
+  REMOVE_SCORE,
+} from 'redux/score/scoreType';
 
 const initialState = {
   scorePlayer1: 0,
@@ -13,6 +17,18 @@ const choiceReducer = (state = initialState, action) => {
         scorePlayer1: action.scorePlayer1,
         scorePlayer2: action.scorePlayer2,
       };
+    case INCREMENT_PLAYER:
+      if (action.player === 1)
+        return {
+          ...state,
+          scorePlayer1: state.scorePlayer1 + 1,
+        };
+      if (action.player === 2)
+        return {
+          ...state,
+          scorePlayer2: state.scorePlayer2 + 1,
+        };
+      break;
     case REMOVE_SCORE:
       return {
         ...state,

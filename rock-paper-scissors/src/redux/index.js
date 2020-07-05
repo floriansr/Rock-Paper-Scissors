@@ -1,2 +1,2 @@
 export { setChoice, removeChoice } from 'redux/choice/choiceAction';
-export { setScore, removeScore } from 'redux/score/scoreAction';
+export { setScore, incrementScore, removeScore } from 'redux/score/scoreAction';
