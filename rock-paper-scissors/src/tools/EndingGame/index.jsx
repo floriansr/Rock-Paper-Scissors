@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Result, Button } from 'antd';
 
-import { removeChoice, removeScore } from '../../redux';
+import { removeChoice, removeScore, removeAutoplay } from '../../redux';
 
 const EndingGame = () => {
   const { scorePlayer1, scorePlayer2 } = useSelector((state) => state.score);
@@ -12,6 +12,7 @@ const EndingGame = () => {
   const newGame = () => {
     dispatch(removeChoice());
     dispatch(removeScore());
+    dispatch(removeAutoplay());
   };
 
   return (
