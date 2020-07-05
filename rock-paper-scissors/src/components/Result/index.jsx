@@ -7,8 +7,8 @@ const Result = () => {
 
   return (
     <>
-      <h3>My score : {scorePlayer1}</h3>
-      <h3>His score : {scorePlayer2}</h3>
+      <h3>Player 1 : {scorePlayer1}</h3>
+      <h3>Player 2 : {scorePlayer2}</h3>
     </>
   );
 };
