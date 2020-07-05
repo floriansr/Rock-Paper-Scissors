@@ -1,0 +1,2 @@
+export const SCORE_PLAYERS = 'SCORE_PLAYERS';
+export const REMOVE_SCORE = 'REMOVE_SCORE';
