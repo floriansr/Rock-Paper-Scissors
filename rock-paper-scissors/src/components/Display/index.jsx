@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Button, message } from 'antd';
 
-import { setChoice } from '../../redux';
+import { setChoice, incrementScore } from '../../redux';
 
 const Display = () => {
   const dispatch = useDispatch();
@@ -15,24 +15,30 @@ const Display = () => {
 
     // PLAYER 1 WIN
     if (player1 === 'Scissors' && player2 === 'Paper')
-      return message.success('Player 1 win !', 3);
+      return (
+        message.success('Player 1 win !', 3) && dispatch(incrementScore(1))
+      );
 
     if (player1 === 'Rock' && player2 === 'Scissors')
-      return message.success('Player 1 win !', 3);
+      return (
+        message.success('Player 1 win !', 3) && dispatch(incrementScore(1))
+      );
 
     if (player1 === 'Paper' && player2 === 'Rock')
-      return message.success('Player 1 win !', 3);
+      return (
+        message.success('Player 1 win !', 3) && dispatch(incrementScore(1))
+      );
 
     // PLAYER 2 WIN
 
     if (player2 === 'Paper' && player1 === 'Rock')
-      return message.error('Player 2 win !', 3);
+      return message.error('Player 2 win !', 3) && dispatch(incrementScore(2));
 
     if (player2 === 'Rock' && player1 === 'Scissors')
-      return message.error('Player 2 win !', 3);
+      return message.error('Player 2 win !', 3) && dispatch(incrementScore(2));
 
     if (player2 === 'Scissors' && player1 === 'Paper')
-      return message.error('Player 2 win !', 3);
+      return message.error('Player 2 win !', 3) && dispatch(incrementScore(2));
   };
 
   const setCurrentChoice = (e) => {
