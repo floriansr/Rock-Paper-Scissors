@@ -8,6 +8,7 @@ import { setChoice, incrementScore } from '../../redux';
 const Display = () => {
   const dispatch = useDispatch();
   const { choicePlayer1, choicePlayer2 } = useSelector((state) => state.choice);
+  const { scorePlayer1, scorePlayer2 } = useSelector((state) => state.score);
 
   const compareChoice = (player1, player2) => {
     // DRAW
@@ -42,6 +43,7 @@ const Display = () => {
   };
 
   const setCurrentChoice = (e) => {
+    if (scorePlayer1 === 3 || scorePlayer2 === 3) return false;
     const allChoices = ['Rock', 'Paper', 'Scissors'];
     const computer = allChoices[Math.floor(Math.random() * allChoices.length)];
     dispatch(setChoice(e.target.textContent, computer));
