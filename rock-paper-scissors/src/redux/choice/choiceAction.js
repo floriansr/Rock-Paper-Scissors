@@ -1,20 +1,10 @@
-import {
-  SET_CHOICE,
-  SET_COMPUTER_CHOICE,
-  REMOVE_CHOICE,
-} from 'redux/choice/choiceType';
+import { SET_CHOICE, REMOVE_CHOICE } from 'redux/choice/choiceType';
 
-export const setChoice = (choice) => {
+export const setChoice = (choicePlayer1, choicePlayer2) => {
   return {
     type: SET_CHOICE,
-    choice,
-  };
-};
-
-export const setComputerChoice = (choice) => {
-  return {
-    type: SET_COMPUTER_CHOICE,
-    choice,
+    choicePlayer1,
+    choicePlayer2,
   };
 };
 

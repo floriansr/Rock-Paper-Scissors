@@ -1,12 +1,8 @@
-import {
-  SET_CHOICE,
-  SET_COMPUTER_CHOICE,
-  REMOVE_CHOICE,
-} from 'redux/choice/choiceType';
+import { SET_CHOICE, REMOVE_CHOICE } from 'redux/choice/choiceType';
 
 const initialState = {
-  choice: null,
-  computerChoice: null,
+  choicePlayer1: null,
+  choicePlayer2: null,
 };
 
 const choiceReducer = (state = initialState, action) => {
@@ -14,17 +10,14 @@ const choiceReducer = (state = initialState, action) => {
     case SET_CHOICE:
       return {
         ...state,
-        choice: action.choice,
-      };
-    case SET_COMPUTER_CHOICE:
-      return {
-        ...state,
-        computerChoice: action.choice,
+        choicePlayer1: action.choicePlayer1,
+        choicePlayer2: action.choicePlayer2,
       };
     case REMOVE_CHOICE:
       return {
         ...state,
-        choice: null,
+        choicePlayer1: null,
+        choicePlayer2: null,
       };
     default:
       return state;

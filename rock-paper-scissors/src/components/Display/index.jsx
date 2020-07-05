@@ -3,20 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Button } from 'antd';
 
-import { setChoice, setComputerChoice } from '../../redux';
+import { setChoice } from '../../redux';
 
 const Display = () => {
   const dispatch = useDispatch();
-  const { choice, computerChoice } = useSelector((state) => state.choice);
+  const { choicePlayer1, choicePlayer2 } = useSelector((state) => state.choice);
 
   const setCurrentChoice = (e) => {
-    // console.log('setChoice -> choice', e.target.textContent);
-    dispatch(setChoice(e.target.textContent));
-
     const allChoices = ['Paper', 'Rock', 'Scissors'];
     const computer = allChoices[Math.floor(Math.random() * allChoices.length)];
-    // console.log('setCurrentChoice -> computer', computer);
-    dispatch(setComputerChoice(computer));
+    dispatch(setChoice(e.target.textContent, computer));
   };
 
   return (
@@ -31,10 +27,10 @@ const Display = () => {
         Scissors
       </Button>
 
-      {choice ? (
+      {choicePlayer1 ? (
         <div>
-          <h3>My current choice : {choice}</h3>
-          <h3>Computer choice : {computerChoice}</h3>
+          <h3>Player 1 : {choicePlayer1}</h3>
+          <h3>Player 2 : {choicePlayer2}</h3>
         </div>
       ) : (
         ''
