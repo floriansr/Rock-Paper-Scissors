@@ -15,7 +15,7 @@ const Display = () => {
 
   const compareChoice = (player1, player2) => {
     // DRAW
-    if (player1 === player2) return message.warning('This is a draw');
+    if (player1 === player2) return message.warning('This is a tie');
 
     // PLAYER 1 WIN
     if (player1 === 'Scissors' && player2 === 'Paper')
